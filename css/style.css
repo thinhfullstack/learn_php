@@ -1,0 +1,35 @@
+.input_error {
+    border: 2px solid red !important;
+}
+
+.error {
+    color: red;
+}
+
+label {
+    font-weight: bold;
+    float: left;
+    width: 100px;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 7px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#gender {
+    margin: 10px 0 0 0;
+}
