@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form PHP</title>
+    <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
     <?php
-        echo 'Hello World';
-        
+        require_once("./views/partitions/header.php");
+    ?>
+
+    <section class="container">
+        <?php
+            require_once("./views/layout.php");
+        ?>
+    </section>
+
+    <?php
+        require_once("./views/partitions/footer.php");
     ?>
 </body>
 </html>
