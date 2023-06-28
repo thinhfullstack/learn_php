@@ -1,5 +1,3 @@
-<?php require('./admin-managements/database.php') ?>
-
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h2 class="display-4">User Management</h2>
     <p><a href="admin-management.php?module=user&action=create">Add new</a></p>
@@ -22,11 +20,11 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach($users as $user): ?>
+          <?php foreach($_SESSION['user'] as $user): ?>
           <tr>
             <th scope="row"><?= $user['id'] ?></th>
             <td><img style="width: 50px; height: 50px; border-radius: 50%" src="<?= $user['avatar'] ?>" alt=""></td>
-            <td><?= $user['name'] ?></td>
+            <td><?= $user['fullname'] ?></td>
             <td><?= $user['phone'] ?></td>
             <td><?= $user['address'] ?></td>
             <td><?= $user['gender'] == 1 ? 'Nam' : 'Nữ' ?></td>

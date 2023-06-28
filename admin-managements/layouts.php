@@ -35,12 +35,22 @@
             }
             break;
         case 'user':
-            if(!$action) {
-                require_once("./admin-managements/views/users/list.php");
-            } else {
-                require_once("./admin-managements/views/users/{$action}.php");
+            switch ($action) {
+                case 'list':
+                    require_once("./admin-managements/views/users/list.php");
+                    break;
+                case 'create':
+                    require_once("./admin-managements/views/users/user_process.php");
+                    require_once("./admin-managements/views/users/create.php");
+                    break;
+                case 'edit':
+                    require_once("./admin-managements/views/users/edit.php");
+                    break;
+                
+                default:
+                    require_once("./admin-managements/views/users/list.php");
+                    break;
             }
-            break;
         case 'auth':
             if($action == 'login') {
                 require_once("./admin-managements/views/auth/process_login.php");
@@ -50,6 +60,14 @@
                 require_once("./admin-managements/views/auth/logout.php");
             }
 
+            break;
+        case 'upload': 
+            if(!$action) {
+                require_once("./admin-managements/views/upload/process_upload.php");
+                require_once("./admin-managements/views/upload/form.php");
+            } else {
+                require_once("./admin-managements/views/categories/{$action}.php");
+            }
             break;
 
         default:
