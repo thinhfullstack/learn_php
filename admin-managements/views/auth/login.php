@@ -6,14 +6,14 @@
         <div class="form-group row">
         <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
         <div class="col-sm-9">
-            <input type="text" name="email" class="form-control" />
+            <input type="text" name="email" class="form-control" placeholder="Nhập email của bạn..." />
             <?= $errEmail ? "<div class='error'>$errEmail</div>" : '' ?>
         </div>
         </div>
         <div class="form-group row">
             <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
-                <input type="password" name="password" class="form-control" />
+                <input type="password" name="password" class="form-control" placeholder="Nhập mật khẩu của bạn..." />
                 <?= $errPassWord ? "<div class='error'>$errPassWord</div>" : '' ?>
             </div>
         </div>

@@ -44,7 +44,11 @@
                     require_once("./admin-managements/views/users/create.php");
                     break;
                 case 'edit':
+                    require_once("./admin-managements/views/users/user_process.php");
                     require_once("./admin-managements/views/users/edit.php");
+                    break;
+                case 'delete':
+                    require_once("./admin-managements/views/users/delete.php");
                     break;
                 
                 default:
@@ -66,7 +70,7 @@
                 require_once("./admin-managements/views/upload/process_upload.php");
                 require_once("./admin-managements/views/upload/form.php");
             } else {
-                require_once("./admin-managements/views/categories/{$action}.php");
+                require_once("./admin-managements/views/upload/{$action}.php");
             }
             break;
 
