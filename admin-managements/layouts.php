@@ -2,6 +2,23 @@
     $module = $_GET['module'] ?? 'admin-management';
     $action = $_GET['action'] ?? null;
 
+    /* Thực hiện cho việc khi đã login vào hệ thống thì 
+        sẽ ngăn chặn việc ra khỏi màn Home để quay lại login
+        -> Trừ khi ta phải logout
+    */
+    if($action === 'login' && !empty($_SESSION['user'])) {
+        header('location: admin-management.php?module=product');
+    }
+
+    /* Thực hiện cho việc khi đã logout thoát khỏi hệ thống thì 
+        sẽ không điều hướng quay trở lại vào hệ thống được.
+        -> Muốn vào được ta phải login
+    */
+    if($module != 'auth' && empty($_SESSION['user'])) {
+        header('location: admin-management.php?module=auth&action=login');
+    }
+    
+
     switch ($module) {
         case 'product':
             if(!$action) {
@@ -23,6 +40,16 @@
             } else {
                 require_once("./admin-managements/views/users/{$action}.php");
             }
+            break;
+        case 'auth':
+            if($action == 'login') {
+                require_once("./admin-managements/views/auth/process_login.php");
+                require_once("./admin-managements/views/auth/login.php");
+            }
+            if($action == 'logout') {
+                require_once("./admin-managements/views/auth/logout.php");
+            }
+
             break;
 
         default:
