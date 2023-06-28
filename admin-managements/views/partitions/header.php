@@ -4,6 +4,7 @@
         <a class="p-2 text-dark" href="admin-management.php?module=product">Product management</a>
         <a class="p-2 text-dark" href="admin-management.php?module=category">Category management</a>
         <a class="p-2 text-dark" href="admin-management.php?module=user">User management</a>
+        <a class="p-2 text-dark" href="admin-management.php?module=upload">Upload file</a>
     </nav>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
