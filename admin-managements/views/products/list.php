@@ -42,13 +42,5 @@
           <?php endif; ?>
         </tbody>
       </table>
-      <nav aria-label="Page navigation example" class="d-flex flex-wrap">
-        <?php for($page = 1; $page <= $totalPage; $page++): ?>
-        <?php $active = $page == $currentPage ? 'text-danger' : '' ?>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link <?= $active ?>" href="admin-management.php?module=product&page=<?= $page ?>"><?= $page ?></a></li>
-        </ul>
-        <?php endfor; ?>
-      </nav>
     </div>
 </div>
