@@ -18,15 +18,30 @@
         header('location: admin-management.php?module=auth&action=login');
     }
     
-
     switch ($module) {
         case 'product':
-            if(!$action) {
-                require_once("./admin-managements/views/products/list.php");
-            } else {
-                require_once("./admin-managements/views/products/{$action}.php");
+            switch ($action) {
+                case 'list':
+                    require_once("./admin-managements/views/products/list.php");
+                    break;
+                case 'create':
+                    require_once("./admin-managements/views/products/pr_process.php");
+                    require_once("./admin-managements/views/products/create.php");
+                    break;
+                case 'edit':
+                    require_once("./admin-managements/views/products/pr_process.php");
+                    require_once("./admin-managements/views/products/edit.php");
+                    break;
+                case 'delete':
+                    require_once("./admin-managements/views/products/delete.php");
+                    break;
+
+                default:
+                    require_once("./admin-managements/views/products/list.php");
+                    break;
             }
             break;
+            
         case 'category':
             if(!$action) {
                 require_once("./admin-managements/views/categories/list.php");
@@ -34,6 +49,7 @@
                 require_once("./admin-managements/views/categories/{$action}.php");
             }
             break;
+
         case 'user':
             switch ($action) {
                 case 'list':
@@ -55,6 +71,8 @@
                     require_once("./admin-managements/views/users/list.php");
                     break;
             }
+            break;
+
         case 'auth':
             if($action == 'login') {
                 require_once("./admin-managements/views/auth/process_login.php");

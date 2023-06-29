@@ -65,11 +65,11 @@
                 $errFile = 'Vui lòng chọn ảnh đại diện';
             } else {
                 $fileName = time() . "_" . $_FILES['file']['name'];
-                $targetPath = "./assets/images/" . $fileName;
+                $targetPath = "./assets/images_user/" . $fileName;
             
                 move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
                 
-                echo "<img src='./assets/images/". $fileName ."' width='150' />";
+                echo "<img src='./assets/images_user/". $fileName ."' width='150' />";
 
                 $users = [
                     'id'       => count($_SESSION['users']) + 1,
